@@ -90,7 +90,11 @@ class _ProductListState extends State<ProductList> {
 
   void goToDetail(Product product) async {
     bool result = await Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ProductDetails()));
+        context,
+        MaterialPageRoute(
+            builder: (context) => ProductDetails(
+                  product: product,
+                )));
     if (result != null) {
       if (result) {
         getProducts();
